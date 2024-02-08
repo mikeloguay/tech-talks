@@ -1,2 +1,3 @@
-# tech-talks
-Some presentations of technical stuff that I presented
+# Tech talks
+
+Some sessions of technical stuff that I presented to developers
