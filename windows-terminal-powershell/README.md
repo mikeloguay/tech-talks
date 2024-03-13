@@ -72,31 +72,34 @@ echo $PROFILE
 # Setup guide 1/4 (choco)
 
 1. Open Windows Terminal as admin (Windows PowerShell by default)
-2. Install choco
+2. Install winget (if it is not there)
+
+   Go to Microsoft Store and install "App Installer"
+
+3. Install all the tools (with `winget` if possible)
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; `
-    [System.Net.ServicePointManager]::SecurityProtocol `
-    = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
-    iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+winget install Microsoft.PowerShell
+winget install Git.Git
+winget install JanDeDobbeleer.OhMyPosh
 ```
 
-3. Install all the tools (with choco)
+4. Download and install a nerd font (e.g. Cascadia Code)
 
-```powershell
-choco install powershell-core nerd-fonts-cascadiacode oh-my-posh git vim gsudo -y
-```
+https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/CascadiaCode.zip
+
+Unzip to a folder, select all, right click and "Install".
 
 ---
 
 # Setup guide 2/4 (modules)
 
-4. Close and open again Windows Terminal
+4. Close and open Windows Terminal as administrator
 5. Open a PowerShell [Core] tab (just installed)
 6. Install Terminal Icons module
 
 ```powershell
-gsudo Install-Module -Name Terminal-Icons -Repository PSGallery -Confirm
+Install-Module -Name Terminal-Icons -Repository PSGallery -Confirm
 ```
 
 7. Update PSReadline (PowerShell module)
